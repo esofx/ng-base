@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-controller="masterCtrl">
+<head>
+  <meta charset="UTF-8">
+  <title ng-bind="title"></title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.yeti.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script src="/assets/js/require.js"></script>
+  <script>
+    require.config({
+      paths: {
+        //main: "/app.built"
+        main: "/app/main"
+      }
+    })
+    require(['main']);
+  </script>
+
+</head>
+<body id="app" ng-include="bodyTmpl">
+  
+</body>
+</html>
