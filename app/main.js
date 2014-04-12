@@ -8,10 +8,14 @@ requirejs.config({
     jquery: '../assets/js/jquery.min',
     angular: '../assets/js/angular.min',
     ngRoute: '../assets/js/angular-route.min',
-    moment: '../assets/js/moment.min'
+    moment: '../assets/js/moment.min',
+    text: '../assets/js/text'
   },
 
   shim: {
+    jquery: {
+      exports: 'jQuery'
+    },
     angular: {
       deps: ['jquery'],
       exports: 'angular'

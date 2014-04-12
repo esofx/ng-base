@@ -44,13 +44,13 @@ define(
             return ajax.get({url: url.account});
           }
         };
-      };
 
-      $rootScope.$on('auth-failed', function () {
-        auth.user = null;
-      });
+        $rootScope.$on('auth-failed', function () {
+          auth.user = null;
+        });
 
-      return auth;
+        return auth;
+      }
     ]
   }
 )

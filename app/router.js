@@ -3,7 +3,6 @@ define(
   function (ng, app, r, path, config, templates) {
 
     var page = path.page;
-    var tmpl = path.tmpl;
 
     ng.module('app').config([
       '$routeProvider', '$locationProvider', '$sceDelegateProvider',
@@ -13,6 +12,20 @@ define(
         $sceDelegateProvider.resourceUrlWhitelist([
           '**'
         ]);
+
+        $locationProvider.html5Mode(true);
+
+        $routeProvider
+          .when(
+            page(config.homePage),
+            r('app', {
+              title: 'Home',
+              bodyTmpl: 'app',
+              headerTmpl: 'app.header',
+              panelTmpl: 'app.home'
+            })
+          )
+          .otherwise({redirectTo: config.homePage})
       }
     ]);
   }
