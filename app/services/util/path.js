@@ -1,5 +1,5 @@
 define(
-  ['../util/path'],
+  ['path'],
   function (path) {
   return [function () { return path; }]
 })

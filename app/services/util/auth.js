@@ -1,8 +1,8 @@
 define(
-  ['../config'],
+  ['config'],
   function (config) {
     return [
-      '$rootScope', 'ajax', 'session', 'path',
+      '$rootScope', 'util.ajax', 'util.session', 'util.path',
       function ($rootScope, ajax, session, path) {
         var url = {
           login: path.auth('login'),

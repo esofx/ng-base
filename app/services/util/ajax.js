@@ -2,7 +2,7 @@ define(
   ['jquery'],
   function (jquery) {
   return [
-    '$rootScope', '$q', 'session',
+    '$rootScope', '$q', 'util.session',
     function ($rootScope, $q, session) {
 
       var inWorks = [];

@@ -1,5 +1,5 @@
 define(
-  ['../config'],
+  ['config'],
   function (config) {
     return [function () {
       var keyName = config.apiKeyName;

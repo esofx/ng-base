@@ -1,6 +1,6 @@
 define(function () {
   return [
-    'ajax', 'path',
+    'util.ajax', 'util.path',
     function (ajax, path) {
       var factory = function (scope) {
 

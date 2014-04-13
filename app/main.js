@@ -9,7 +9,8 @@ requirejs.config({
     angular: '../assets/js/angular.min',
     ngRoute: '../assets/js/angular-route.min',
     moment: '../assets/js/moment.min',
-    text: '../assets/js/text'
+    text: '../assets/js/text',
+    path: './util/path',
   },
 
   shim: {
