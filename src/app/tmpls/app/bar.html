@@ -1,3 +1,6 @@
 <div ng-controller="app.barCtrl">
   <h1>Hello Bar {{bar}}</h1>
+  <hr>
+  <a route="app.bar({bar: fizz()})">This route Points to {{fizz()}}</a>
+  <input type="text" class="form-control" ng-model="bar"/>
 </div>
