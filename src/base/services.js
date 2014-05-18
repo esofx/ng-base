@@ -4,16 +4,16 @@ define(
     'ngRoute',
 
     './services/Errors', './services/Notif', './services/ajaxProvider',
-    './services/api', './services/auth', './services/c', './services/fileReader', './services/interval',
-    './services/pathProvider', './services/routingProvider', './services/session'
+    './services/api', './services/auth', './services/c', './services/fileReader',
+    './services/path', './services/routing', './services/session'
   ],
   function (
     ng,
-    ngRoute
+    ngRoute,
 
     Errors, Notif, ajaxProvider,
-    api, auth, c, fileReader, interval,
-    pathProvider, routingProvider, session
+    api, auth, c, fileReader,
+    path, routing, session
   ) {
 
     ng.module('base.services', ['ngRoute'])
@@ -21,14 +21,15 @@ define(
       .factory('base.Notif', Notif)
       .provider('base.ajax', ajaxProvider)
       .factory('base.api', api)
-      .factory('base.auth', auth),
+      .factory('base.auth', auth)
       .factory('base.c', c)
       .factory('base.fileReader', fileReader)
-      .factory('base.interval', interval)
-      .provider('base.path', pathProvider)
-      .provider('base.routing', routingProvider)
+
+      .value('base.path', path)
+      .value('base.routing', routing)
+
       .factory('base.session', session)
 
-    return ng.module(['services'])
+    return ng.module(['base.services'])
   }
 )

@@ -13,7 +13,9 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="{{navClass('home')}}"><a href="{{page('dashboard')}}">Home</a></li>
+      <li class="{{navClass('home')}}"><a route="app">Home</a></li>
+      <li class="{{navClass('foo')}}"><a route="app.foo">Foo</a></li>
+      <li class="{{navClass('bar')}}"><a route="app.bar({bar: '1'})">Bar</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

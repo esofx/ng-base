@@ -4,19 +4,23 @@ define(
     './services',
     
     './controllers/master',
-    './controllers/app'
+    './controllers/app',
+    './controllers/app/bar'
   ],
   function (
     ng,
     services,
 
     masterCtrl,
-    appCtrl
+    appCtrl,
+
+    appBarCtrl
   ) {
 
     ng.module('app.controllers', ['app.services'])
-      .controller('master', masterCtrl)
-      .controller('app', appCtrl)
+      .controller('masterCtrl', masterCtrl)
+      .controller('appCtrl', appCtrl)
+      .controller('app.barCtrl', appBarCtrl)
 
     return ng.module('app.controllers');
   }

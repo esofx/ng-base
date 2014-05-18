@@ -2,12 +2,13 @@ define(
   [
     'angular',
     './services',
-    './templates'
+    './templates',
 
-    'directives/pasteOnly',
-    'directives/inWorksMarker', 
-    'directives/size',
-    'directives/confirmedClick'
+    './directives/pasteOnly',
+    './directives/inWorksMarker', 
+    './directives/size',
+    './directives/confirmedClick',
+    './directives/route'
   ],
   function (
     ng,
@@ -17,15 +18,17 @@ define(
     pasteOnly,
     inWorksMarker,
     size,
-    confirmedClick
+    confirmedClick,
+    route
   )
   {
 
     ng.module('base.directives', ['base.services', 'base.templates'])
-      .directive('base.pasteOnly', pasteOnly)
-      .directive('base.inWorksMarker', inWorksMarker)
-      .directive('base.size', size)
-      .directive('base.confirmedClick', confirmedClick)
+      .directive('pasteOnly', pasteOnly)
+      .directive('inWorksMarker', inWorksMarker)
+      .directive('size', size)
+      .directive('confirmedClick', confirmedClick)
+      .directive('route', route)
 
     return ng.module('base.directives');
   }

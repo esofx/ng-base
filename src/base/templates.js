@@ -5,12 +5,12 @@ define(
   ],
   function (
     ng,
-    inWorksMarkerTmpl
+    directivesInWorksMarkerTmpl
   ) {
 
     ng.module('base.templates', []).run(['$templateCache', function ($t) {
 
-      $t.put('base.directives.inWorksMarker', directiveInWorksMarkerTmpl)
+      $t.put('base.directives.inWorksMarker', directivesInWorksMarkerTmpl)
 
     }]);
 

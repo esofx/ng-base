@@ -1,11 +1,11 @@
 define(
   ['jquery'],
   function (jquery) {
-    var ajaxProvider =  {
+    var ajaxProvider = {
       useApiKey: false,
 
       $get: [
-        '$rootScope', '$q', 'util.session',
+        '$rootScope', '$q', 'base.session',
         function ($rootScope, $q, session) {
 
           var inWorks = [];
@@ -92,4 +92,4 @@ define(
 
     return ajaxProvider;
   }
-})
+)

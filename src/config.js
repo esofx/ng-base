@@ -1,6 +1,6 @@
 define(function () {
   return {
-    appName: 'Docload',
+    appName: 'App',
     
     apiBase: 'http://api.foo.dev/',
 
@@ -10,7 +10,7 @@ define(function () {
 
     pageBase: '/',
 
-    homePage: 'dashboard',
+    homePage: '',
 
     loginPage: 'login',
 

@@ -2,7 +2,7 @@ define(
   [
     'angular',
     './app/services', './app/controllers', './app/directives', 'app/templates',
-    './base'
+    './base',
     'ngRoute'
   ],
   function (

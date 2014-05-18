@@ -11,12 +11,11 @@ define(function () {
           attrs.$observe('route', function (str) {
             if (str.indexOf('(') > -1) {
               var routeName = str.slice(0, str.indexOf('('));
-              var route = routing.route(routeName);
               // we assume that the programmer is "competent" and the last char is a closing bracket
               // and we get the args array str
               var args = $scope.$eval('[' + str.slice(routeName.length+1, -1) + ']');
               // now we set path by applying routing.path on the array
-              var path = route.path.apply(route, args);
+              var path = routing.path(routeName).apply({}, args);
             } else {
               var path = routing.path(str);
             }

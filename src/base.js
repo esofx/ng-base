@@ -16,7 +16,7 @@ define(
     templates
   ) {
 
-    return ng.module('base', ['ngRoute', 'base.services', 'base.directives', 'base.templates'])
+    return ng.module('base', ['ngRoute', 'base.services', 'base.directives', 'base.templates']);
 
   }
 )
