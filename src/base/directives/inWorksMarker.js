@@ -1,10 +1,11 @@
 define(function () {
   return [
-    'path', 'ajax',
+    'base.path', 'base.ajax',
     function (path, ajax) {
       return {
         restrict: 'E',
-        templateUrl: 'directives.in-works-marker',
+        // still needs to be worked on
+        templateUrl: 'base.directives.inWorksMarker',
         replace: true
       }
     }

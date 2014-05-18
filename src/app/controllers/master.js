@@ -2,7 +2,7 @@ define(
   ['config'],
   function (config) {
     return [
-      '$scope', '$location', '$route', 'path', 'auth', 'ajax',
+      '$scope', '$location', '$route', 'base.path', 'base.auth', 'base.ajax',
       function ($scope, $location, $route, path, auth, ajax) {
 
         $scope.page = path.page;
