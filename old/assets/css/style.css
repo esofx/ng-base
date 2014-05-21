@@ -1,0 +1,77 @@
+/**
+ * modal styles that include modal-lg and modal-sm
+ */
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+  .modal-lg {
+    width: 900px;
+  }
+}
+
+.shadow {
+  box-shadow: 0px 0px 1px;
+}
+
+/**
+ * removeable and closer
+ */
+.removeable {
+  position: relative;
+}
+
+.removeable .remover {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.removeable .status {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+
+.preview-box {
+  position: relative;
+}
+
+.preview-box .preview-container {
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  overflow: hidden;
+  background: #fff;
+  z-index: 999;
+  height: 0px;
+  width: 0px;
+  overflow: hidden;
+}
+
+.preview-box .preview-container.open {
+  box-shadow: 0px 0px 1px #000;
+  overflow: auto;
+}
+
+#in-works-marker {
+  text-align: center;
+  width: 200px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  margin-left: -100px
+}
+
+#app ul.list-inline>li {
+  margin: 5px;
+}
