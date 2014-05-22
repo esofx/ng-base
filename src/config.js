@@ -1,14 +1,14 @@
 define(
   [
     'angular',
-    'index'
+    'app'
   ],
   function (
     ng,
-    client
+    app
   ) {
     // setup env specific variables
-    ng.module('client').constant('env', {
+    ng.module('app').constant('env', {
       appName: 'App',    
       apiBase: 'http://api.foo.dev/',
       socketAddr: 'ws://api.foo.dev:8080',
@@ -20,8 +20,8 @@ define(
       refreshedKeyName: 'refreshed-api-key'
     });
 
-    // client config block
-    ng.module('client').config([
+    // app config block
+    ng.module('app').config([
       'env',
       '$locationProvider',
       '$sceDelegateProvider',
