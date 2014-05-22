@@ -23,13 +23,13 @@ define(
   )
   {
 
-    ng.module('base.directives', ['base.services', 'base.templates'])
+    ng.module('core.directives', ['core.services', 'core.templates'])
       .directive('pasteOnly', pasteOnly)
       .directive('inWorksMarker', inWorksMarker)
       .directive('size', size)
       .directive('confirmedClick', confirmedClick)
       .directive('route', route)
 
-    return ng.module('base.directives');
+    return ng.module('core.directives');
   }
 )

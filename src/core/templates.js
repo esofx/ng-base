@@ -8,9 +8,9 @@ define(
     directivesInWorksMarkerTmpl
   ) {
 
-    ng.module('base.templates', []).run(['$templateCache', function ($t) {
+    ng.module('core.templates', []).run(['$templateCache', function ($t) {
 
-      $t.put('base.directives.inWorksMarker', directivesInWorksMarkerTmpl)
+      $t.put('core.directives.inWorksMarker', directivesInWorksMarkerTmpl)
 
     }]);
 

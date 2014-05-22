@@ -1,6 +1,6 @@
 define(function () {
   return [
-    '$parse', 'base.routing',
+    '$parse', 'core.routing',
     function ($parse, routing) {
       var type = function (val) { return Object.prototype.toString.call(val); }
 

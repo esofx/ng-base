@@ -2,20 +2,20 @@ define(
   [
     'angular',
     './app/services', './app/controllers', './app/directives', 'app/templates',
-    './base',
+    './core',
     'ngRoute'
   ],
   function (
     ng,
     services, controllers, directives,
-    base,
+    core,
     ngRoute
   ) {
     return ng.module('app', [
             'app.services',
             'app.controllers',
             'app.directives',
-            'base',
+            'core',
             'ngRoute'
           ]);
   }

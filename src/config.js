@@ -1,22 +1,63 @@
-define(function () {
-  return {
-    appName: 'App',
-    
-    apiBase: 'http://api.foo.dev/',
+define(
+  [
+    'angular',
+    'index'
+  ],
+  function (
+    ng,
+    client
+  ) {
+    // setup env specific variables
+    ng.module('client').constant('env', {
+      appName: 'App',    
+      apiBase: 'http://api.foo.dev/',
+      socketAddr: 'ws://api.foo.dev:8080',
+      authBase: 'http://api.foo.dev/auth/',
+      pageBase: '/',
+      homePage: '',
+      loginPage: 'login',
+      apiKeyName: 'api-key',
+      refreshedKeyName: 'refreshed-api-key'
+    });
 
-    socketAddr: 'ws://api.foo.dev:8080',
+    // client config block
+    ng.module('client').config([
+      'env',
+      '$locationProvider',
+      '$sceDelegateProvider',
+      'core.routingProvider',
+      'core.ajaxProvider',
+      function (
+        env,
+        $locationProvider,
+        $sceDelegateProvider,
+        ajaxProvider,
+        routingProvider
+      ) {
 
-    authBase: 'http://api.foo.dev/auth/',
+        // set html5Mode for $locationProvider
+        $locationProvider.html5Mode(true);
 
-    pageBase: '/',
+        // whitelisting outside urls for the time-being
+        $sceDelegateProvider.resourceUrlWhitelist([
+          '**'
+        ]);
 
-    homePage: '',
+        // ajaxProvider setup
+        ajaxProvider.useApiKey = false;
 
-    loginPage: 'login',
+        // routing
+        routingProvider
+          .route('app', env.homePage, {
+            title: 'Home', bodyTmpl: 'app', headerTmpl: 'app.header', panelTmpl: 'app.home'
+          })
+          .route('app').nest('foo', '/foo', {title: 'Foo', panelTmpl: 'app.foo'})
+          .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.foo'})
 
-    apiKeyName: 'api-key',
+          .otherwise('app')
+          .build()
 
-    refreshedKeyName: 'refreshed-api-key'
-
-  };
-})
+      }
+    ])
+  }
+)

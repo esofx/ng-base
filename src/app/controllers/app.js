@@ -1,6 +1,6 @@
 define(function () {
   return [
-    '$scope', '$location', '$route', 'base.path',
+    '$scope', '$location', '$route', 'core.path',
     function ($scope, $location, $route, path) {
       $scope.navClass = function (slug) {
         return $location.path() === path.page(slug) ? 'active' : 'inactive';
