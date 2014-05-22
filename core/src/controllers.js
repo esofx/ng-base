@@ -1,12 +1,15 @@
 define(
   [
     'angular',
-
-    './services',
+    'services',
   ],
-  function (ng) {
+  function (
+    ng,
+    services
+  ) {
+    ng.module('core.controllers', ['client.services']);
+    //.controller('foo', bar)
 
-    ng.module
-
+    return ng.module('core.controllers');
   }
 )

@@ -1,14 +1,14 @@
 define(
   [
-    'ng',
-    './module'
+    'angular',
+    'index'
   ],
   function (
     ng,
     client
   ) {
     // setup env specific variables
-    client.constant('env', {
+    ng.module('client').constant('env', {
       appName: 'App',    
       apiBase: 'http://api.foo.dev/',
       socketAddr: 'ws://api.foo.dev:8080',
@@ -21,12 +21,12 @@ define(
     });
 
     // client config block
-    client.config([
+    ng.module('client').config([
       'env',
       '$locationProvider',
       '$sceDelegateProvider',
       'core.routingProvider',
-      'core.ajaxProvider'
+      'core.ajaxProvider',
       function (
         env,
         $locationProvider,
