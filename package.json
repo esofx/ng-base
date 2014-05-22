@@ -1,0 +1,13 @@
+{
+  "name": "ng-base",
+  "description": "AngularJS scaffold with AMD loading.",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:buildrad/ng-base.git"
+  }
+}

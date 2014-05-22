@@ -2,7 +2,7 @@ require.config({
   baseUrl: location.protocol + '//' + location.host,
 
   paths: {
-    jquery: 'common/libs/jquery.min',
+    jquery: 'common/libs/jquery',
     angular: 'common/libs/angular',
     ngRoute: 'common/libs/angular-route',
     text: 'common/libs/text'
