@@ -1,14 +1,14 @@
 define(
   [
     'angular',
-    './services'
+    'services'
   ],
   function (
     ng,
     services
   ) {
-    ng.module('client.directives', [services])
+    
+    ng.module('client.directives', ['client.services']);
 
-    return ng.module('client.directives')
   }
 )

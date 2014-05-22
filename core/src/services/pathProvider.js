@@ -1,6 +1,4 @@
-define(
-  ['config'],
-  function (config) {
+define(function () {
     var path = {
       page: function (slug) {
         return config.pageBase + slug;
@@ -12,6 +10,10 @@ define(
 
       auth: function (slug) {
         return config.authBase + slug;
+      }
+
+      $get: function () {
+        return this;
       }
     };
 

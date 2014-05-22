@@ -5,9 +5,7 @@ require.config({
     jquery: 'common/libs/jquery.min',
     angular: 'common/libs/angular',
     ngRoute: 'common/libs/angular-route',
-    text: 'common/libs/text',
-
-    core: 'core/src/module'
+    text: 'common/libs/text'
   },
 
   shim: {
@@ -24,3 +22,16 @@ require.config({
     }
   }
 })
+
+
+require(
+  [
+    'angular',
+    'client/src/index',
+    'client/src/config'
+  ],
+  function (ng, client, config) {
+    console.log('here');
+    ng.bootstrap(document, ['client'])
+  }
+)
