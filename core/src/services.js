@@ -3,9 +3,9 @@ define(
     'angular',
     'ngRoute',
 
-    'services/Errors', 'services/Notif', 'services/ajaxProvider',
-    'services/api', 'services/auth', 'services/c', 'services/fileReader',
-    'services/path', 'services/routing', 'services/session'
+    './services/Errors', './services/Notif', './services/ajaxProvider',
+    './services/api', './services/auth', './services/c', './services/fileReader',
+    './services/path', './services/routing', './services/session'
   ],
   function (
     ng,

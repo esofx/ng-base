@@ -3,9 +3,9 @@ define(
     'angular',
     'ngRoute',
 
-    'services',
-    'directives',
-    'templates',
+    './services',
+    './directives',
+    './templates',
   ],
   function (
     ng,

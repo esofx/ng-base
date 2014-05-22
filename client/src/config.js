@@ -1,7 +1,7 @@
 define(
   [
     'angular',
-    'index'
+    './index'
   ],
   function (
     ng,
