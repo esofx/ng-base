@@ -1,7 +1,7 @@
 define(
   [
     'angular',
-    './services'
+    'client/src/services'
   ],
   function (
     ng,
@@ -11,4 +11,4 @@ define(
     ng.module('client.controllers', ['client.services']);
     
   }
-)
+);
