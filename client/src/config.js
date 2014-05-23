@@ -1,9 +1,10 @@
 define(
   [
     'angular',
+    'core/src/index',
     'client/src/index'
   ],
-  function (ng, client) {
+  function (ng, core, client) {
 
     // setup env specific variables
     ng.module('client').constant('env', {

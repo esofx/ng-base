@@ -10,7 +10,7 @@ define(function () {
 
       auth: function (slug) {
         return config.authBase + slug;
-      }
+      },
 
       $get: function () {
         return this;
