@@ -1,12 +1,10 @@
 define(
   [
     'angular',
-    './index'
+    'client/src/index'
   ],
-  function (
-    ng,
-    client
-  ) {
+  function (ng, client) {
+
     // setup env specific variables
     ng.module('client').constant('env', {
       appName: 'App',    
@@ -58,6 +56,7 @@ define(
           .build()
 
       }
-    ])
+    ]);
+
   }
-)
+);

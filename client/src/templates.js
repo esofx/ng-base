@@ -2,12 +2,12 @@ define(
   [
     'angular',
 
-    'text!templates/app.html',
+    'text!client/src/templates/app.html',
 
-    'text!templates/app/header.html',
-    'text!templates/app/home.html',
-    'text!templates/app/foo.html',
-    'text!templates/app/bar.html'
+    'text!client/src/templates/app/header.html',
+    'text!client/src/templates/app/home.html',
+    'text!client/src/templates/app/foo.html',
+    'text!client/src/templates/app/bar.html'
   ],
   function (
     ng,

@@ -2,7 +2,7 @@ require.config({
   baseUrl: location.protocol + '//' + location.host,
 
   paths: {
-    jquery: 'common/libs/jquery.min',
+    jquery: 'common/libs/jquery',
     angular: 'common/libs/angular',
     ngRoute: 'common/libs/angular-route',
     text: 'common/libs/text'
@@ -27,11 +27,11 @@ require.config({
 require(
   [
     'angular',
-    'client/src/index',
+    // 'client/src/index',
     'client/src/config'
   ],
-  function (ng, client, config) {
-    console.log('here');
-    ng.bootstrap(document, ['client'])
+  // function (ng, client, config) {
+  function (ng, config) {
+    ng.bootstrap(document, ['client']);
   }
-)
+);
