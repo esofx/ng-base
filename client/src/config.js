@@ -23,14 +23,16 @@ define(
       'env',
       '$locationProvider',
       '$sceDelegateProvider',
+      '$routeProvider',
       'core.routingProvider',
       'core.ajaxProvider',
       function (
         env,
         $locationProvider,
         $sceDelegateProvider,
-        ajaxProvider,
-        routingProvider
+        $routeProvider,
+        routingProvider,
+        ajaxProvider
       ) {
 
         // set html5Mode for $locationProvider
@@ -53,7 +55,7 @@ define(
           .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.foo'})
 
           .otherwise('app')
-          .build()
+          .build($routeProvider)
 
       }
     ]);
