@@ -3,7 +3,7 @@ define(['jquery'], function (jquery) {
     useApiKey: false,
 
     $get: [
-      '$rootScope', '$q', 'base.session',
+      '$rootScope', '$q', 'core.session',
       function ($rootScope, $q, session) {
 
         var inWorks = [];

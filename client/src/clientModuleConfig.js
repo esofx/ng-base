@@ -1,33 +1,19 @@
 define(
   [
     'angular',
-    'client/src/index'
+    'client/src/index',
+    'config'
   ],
-  function (ng, client) {
-
-    // setup env specific variables
-    ng.module('client').constant('env', {
-      appName: 'App',    
-      apiBase: 'http://api.foo.dev/',
-      socketAddr: 'ws://api.foo.dev:8080',
-      authBase: 'http://api.foo.dev/auth/',
-      pageBase: '/',
-      homePage: '',
-      loginPage: 'login',
-      apiKeyName: 'api-key',
-      refreshedKeyName: 'refreshed-api-key'
-    });
+  function (ng, client, config) {
 
     // client config block
     ng.module('client').config([
-      'env',
       '$locationProvider',
       '$sceDelegateProvider',
       '$routeProvider',
       'core.routingProvider',
       'core.ajaxProvider',
       function (
-        env,
         $locationProvider,
         $sceDelegateProvider,
         $routeProvider,
@@ -48,15 +34,14 @@ define(
 
         // routing
         routingProvider
-          .route('app', env.homePage, {
+          .route('app', config.homePage, {
             title: 'Home', bodyTmpl: 'app', headerTmpl: 'app.header', panelTmpl: 'app.home'
           })
           .route('app').nest('foo', '/foo', {title: 'Foo', panelTmpl: 'app.foo'})
           .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.foo'})
 
           .otherwise('app')
-          .build($routeProvider)
-
+          .build($routeProvider);
       }
     ]);
 

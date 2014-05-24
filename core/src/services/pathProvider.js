@@ -1,4 +1,4 @@
-define(function () {
+define(['config'], function (config) {
     var path = {
       page: function (slug) {
         return config.pageBase + slug;

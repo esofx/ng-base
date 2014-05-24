@@ -1,17 +1,18 @@
 define(
   [
     'angular',
-    'client/src/services'
+    'client/src/services',
+
+    'client/src/controllers/master'
   ],
   function (
     ng,
-    services
+    services,
+
+    masterCtrl
   ) {
 
     ng.module('client.controllers', ['client.services'])
-      .controller('masterCtrl', function () {
-        console.log('Hello world');
-      });
-    
+      .controller('masterCtrl', masterCtrl);
   }
 );

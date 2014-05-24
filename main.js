@@ -27,11 +27,9 @@ require.config({
 require(
   [
     'angular',
-    // 'client/src/index',
-    'client/src/config'
+    'client/src/clientModuleConfig'
   ],
-  // function (ng, client, config) {
-  function (ng, config) {
+  function (ng, clientModuleConfig) {
     ng.bootstrap(document, ['client']);
   }
 );
