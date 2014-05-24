@@ -37,8 +37,8 @@ define(
           .route('app', config.homePage, {
             title: 'Home', bodyTmpl: 'app', headerTmpl: 'app.header', panelTmpl: 'app.home'
           })
-          .route('app').nest('foo', '/foo', {title: 'Foo', panelTmpl: 'app.foo'})
-          .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.foo'})
+          .route('app').nest('foo', 'foo', {title: 'Foo', panelTmpl: 'app.foo'})
+          .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.bar'})
 
           .otherwise('app')
           .build($routeProvider);

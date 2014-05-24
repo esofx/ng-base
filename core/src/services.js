@@ -26,7 +26,7 @@ define(
       .factory('core.fileReader', fileReader)
       .provider('core.path', pathProvider)
       .provider('core.routing', routingProvider)
-      .factory('core.session', session)
+      .factory('core.session', session);
 
     return ng.module(['core.services']);
   }
