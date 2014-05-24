@@ -1,10 +1,9 @@
 define(
   [
     'angular',
-    'core/src/index',
     'client/src/index'
   ],
-  function (ng, core, client) {
+  function (ng, client) {
 
     // setup env specific variables
     ng.module('client').constant('env', {
@@ -30,8 +29,8 @@ define(
         env,
         $locationProvider,
         $sceDelegateProvider,
-        ajaxProvider,
-        routingProvider
+        routingProvider,
+        ajaxProvider
       ) {
 
         // set html5Mode for $locationProvider

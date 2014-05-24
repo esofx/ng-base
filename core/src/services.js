@@ -25,9 +25,9 @@ define(
       .factory('core.c', c)
       .factory('core.fileReader', fileReader)
       .provider('core.path', pathProvider)
-      .provider('core.routingProvider', routingProvider)
+      .provider('core.routing', routingProvider)
       .factory('core.session', session)
 
-    return ng.module(['core.services'])
+    return ng.module(['core.services']);
   }
-)
+);

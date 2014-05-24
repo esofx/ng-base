@@ -11,6 +11,7 @@ define(function () {
   return [
     '$routeProvider',
     function ($routeProvider) {
+      console.log($routeProvider)
       var self = this;
       var built = false;
 
