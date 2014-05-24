@@ -8,7 +8,10 @@ define(
     services
   ) {
 
-    ng.module('client.controllers', ['client.services']);
+    ng.module('client.controllers', ['client.services'])
+      .controller('masterCtrl', function () {
+        console.log('Hello world');
+      });
     
   }
 );
