@@ -1,14 +1,14 @@
 define(
   [
     'angular',
-    'services',
-    'templates',
+    'core/src/services',
+    'core/src/templates',
 
-    'directives/pasteOnly',
-    'directives/inWorksMarker', 
-    'directives/size',
-    'directives/confirmedClick',
-    'directives/route'
+    'core/src/directives/pasteOnly',
+    'core/src/directives/inWorksMarker', 
+    'core/src/directives/size',
+    'core/src/directives/confirmedClick',
+    'core/src/directives/route'
   ],
   function (
     ng,

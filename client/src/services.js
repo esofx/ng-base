@@ -6,7 +6,7 @@ define(
     ng
   ) {
     
-    ng.module('client.services');
+    ng.module('client.services', []);
 
   }
-)
+);

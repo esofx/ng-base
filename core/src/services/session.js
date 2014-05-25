@@ -1,9 +1,9 @@
 define(
-  function () {
+  ['config'],
+  function (config) {
     return [
-      'env',
-      function (env) {
-        var keyName = env.apiKeyName;
+      function () {
+        var keyName = config.apiKeyName;
         var key = localStorage.getItem('sessionKey');
 
         return {

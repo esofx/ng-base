@@ -1,14 +1,14 @@
-require(
+define(
   [
     'angular',
     'ngRoute',
 
-    '../core/src/index',
+    'core/src/index', //todo: why are we loading the core index file? is it just to expose core methods? then why not use a provider?
 
-    'services',
-    'controllers',
-    'directives',
-    'templates'
+    'client/src/services',
+    'client/src/controllers',
+    'client/src/directives',
+    'client/src/templates'
   ],
   function (
     ng, ngRoute,
@@ -16,7 +16,7 @@ require(
     services, controllers, directives, templates
   ) {
 
-    ng.module(
+    return ng.module(
       'client', [
         'ngRoute',
         'core',
@@ -28,4 +28,4 @@ require(
     );
 
   }
-)
+);

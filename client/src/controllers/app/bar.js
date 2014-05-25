@@ -2,8 +2,6 @@ define(function () {
   return [
     '$scope', '$routeParams',
     function ($scope, $routeParams) {
-      console.log($routeParams);
-
       $scope.bar = 0;
 
       $scope.setup = function () {

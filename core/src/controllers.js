@@ -1,7 +1,7 @@
 define(
   [
     'angular',
-    'services',
+    'core/src/services',
   ],
   function (
     ng,

@@ -2,20 +2,24 @@ define(
   ['config'],
   function (config) {
     return [
-      '$scope', '$location', '$route', '$interval', 'base.path', 'base.auth', 'base.ajax',
-      function ($scope, $location, $route, $interval, path, auth, ajax) {
-
+      '$scope', '$location', 'core.path', 'core.auth', 'core.ajax', 'core.routing',
+      function ($scope, $location, path, auth, ajax, routingProvider) {
         $scope.page = path.page;
-
         $scope.ajaxInWorks = ajax.inWorks;
 
         var setup = function () {
-          $scope.title = config.appName + ' - ' + $route.current.title;
-          $scope.bodyTmpl = $route.current.bodyTmpl;
+          var currentRoute = $location.path().replace('/', ''),
+              processedRoute = currentRoute === '' ? 'app' : currentRoute,
+              routeData = routingProvider.route(processedRoute).config;
+
+          $scope.title = config.appName + ' - ' + routeData.title;
+          $scope.bodyTmpl = routeData.bodyTmpl;
         };
-        
-        $scope.$on('$routeChangeSuccess', setup)
+
+        setup();
+
+        $scope.$on('$routeChangeSuccess', setup);
       }
-    ]
+    ];
   }
-)
+);

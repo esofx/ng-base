@@ -1,7 +1,7 @@
 define(
   [
     'angular',
-    'text!templates/directives/inWorksMarker.html'
+    'text!core/src/templates/directives/inWorksMarker.html'
   ],
   function (
     ng,
