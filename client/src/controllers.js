@@ -19,6 +19,6 @@ define(
     ng.module('client.controllers', ['client.services'])
       .controller('masterCtrl', masterCtrl)
       .controller('appCtrl', appCtrl)
-      .controller('barCtrl', barCtrl);
+      .controller('app.barCtrl', barCtrl);
   }
 );

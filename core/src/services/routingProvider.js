@@ -6,7 +6,7 @@
  * routing.route('foo', '/home', { title: 'Foo', bodyTmpl: })
  */
 
-define(function () {
+define([], function () {
   // define the routing functionality
   return [
     '$routeProvider',
@@ -55,7 +55,7 @@ define(function () {
           if (path.indexOf('/') > 0) {
             path = this.config.path + '/' + path;
           }
-          
+
           return self.route(this.config.name+'.'+name, path, this.extend(config));
         };
       };
@@ -102,10 +102,39 @@ define(function () {
         }
       };
 
+      this.lookup = function (url) {
+        var name,routeData,
+            matchableRegexs,
+            currentRegex;
+
+        for (name in self.routes)
+        {
+          matchableRegexs = [];
+
+          routeData = self.routes[name].config;
+
+          // have the ability in here to match a set of regexs coming out of an array
+          // but angular route runs the .exec() method on every element, so can't do that right now
+          if (routeData.regexp instanceof Array) matchableRegexs = routeData.regexp;
+          else                                   matchableRegexs.push(routeData.regexp);
+
+          for (var key in matchableRegexs)
+          {
+            currentRegex = matchableRegexs[key];
+
+            if (! currentRegex instanceof RegExp) currentRegex = new RegExp('^' + currentRegex + '$');
+            if (url.match(currentRegex)) return routeData.name;
+          }
+        }
+
+        return null;
+      };
+
       // the $get for the service
       this.$get = function () {
         return {
           path: self.path,
+          lookup: self.lookup,
           route: function (name) { return self.route(name); }
         };
       };
