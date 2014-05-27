@@ -8,9 +8,7 @@ define(
         $scope.ajaxInWorks = ajax.inWorks;
 
         var setup = function () {
-          var currentRoute = $location.path().replace('/', ''),
-              processedRoute = currentRoute === '' ? 'app' : currentRoute,
-              routeData = routingProvider.route(processedRoute).config;
+          var routeData = routingProvider.route(routingProvider.lookup($location.url())).config;
 
           $scope.title = config.appName + ' - ' + routeData.title;
           $scope.bodyTmpl = routeData.bodyTmpl;

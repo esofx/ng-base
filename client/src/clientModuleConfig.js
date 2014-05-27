@@ -35,10 +35,14 @@ define(
         // routing
         routingProvider
           .route('app', config.homePage, {
-            title: 'Home', bodyTmpl: 'app', headerTmpl: 'app.header', panelTmpl: 'app.home'
+            title: 'Home',
+            bodyTmpl: 'app',
+            headerTmpl: 'app.header',
+            panelTmpl: 'app.home',
+            regexp: /^\/$/
           })
-          .route('app').nest('foo', 'foo', {title: 'Foo', panelTmpl: 'app.foo'})
-          .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.bar'})
+          .route('app').nest('foo', 'foo', {title: 'Foo', panelTmpl: 'app.foo', regexp: /^\/foo$/})
+          .route('app').nest('bar', 'bar/:bar', {title: 'Bar', panelTmpl: 'app.bar', regexp: /^\/bar\/[a-zA-Z0-9]$/})
 
           .otherwise('app')
           .build($routeProvider);
