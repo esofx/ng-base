@@ -5,7 +5,7 @@ define(function () {
     socketAddr: 'ws://api.foo.dev:8080',
     authBase: 'http://api.foo.dev/auth/',
     pageBase: '/',
-    homePage: '',
+    homePage: '/',
     loginPage: 'login',
     apiKeyName: 'api-key',
     refreshedKeyName: 'refreshed-api-key'

@@ -53,7 +53,7 @@ define([], function () {
         this.nest = function (name, path, config) {
           // notice "self" !
           if (path.indexOf('/') > 0) {
-            path = this.config.path + '/' + path;
+            path = this.config.path.replace(/\/+$/, "") + '/' + path;
           }
 
           return self.route(this.config.name+'.'+name, path, this.extend(config));
